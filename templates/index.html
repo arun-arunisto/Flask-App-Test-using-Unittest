@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Simple App for Testing</title>
+</head>
+<body>
+<h2>A Simple App for Testing</h2>
+<br>
+<hr>
+{% if get_flashed_messages(category_filter='success')%}
+{% for msg in get_flashed_messages(category_filter='success') %}
+    <h5>{{msg}}</h5>
+{% endfor %}
+{% endif %}
+{% if get_flashed_messages(category_filter='failed')%}
+{% for msg in get_flashed_messages(category_filter='failed') %}
+    <h5>{{msg}}</h5>
+{% endfor %}
+{% endif %}
+<h2>Form For Testing</h2>
+<form action="/add_student" method="post">
+    <input name="stu_name" placeholder="Student name" type="text">
+    <br>
+    <br>
+    <input name="stu_dept" placeholder="Student department" type="text">
+    <br>
+    <br>
+    <input name="stu_age" placeholder="Student age" type="number">
+    <br>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+<br>
+<hr>
+<h2>Adding Button for Test</h2>
+<button type="button"><a href="/student_list">Students</a></button>
+</body>
+</html>

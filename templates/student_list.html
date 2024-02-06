@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A simple app for Testing</title>
+</head>
+<body>
+<h2>Student List (Data retrieve for Testing)</h2>
+<br>
+<hr>
+{% for value in data %}
+    {% if value.student %}
+        {% for d in value.student %}
+            <p>{{d.name}} | {{d.department}} | {{d.age}} -- <button type="button"><a href="/delete_student/{{d.id}}">Delete</a></button></p>
+        {% endfor %}
+    {% else %}
+        <p>No data available -- <button type="button"><a href="/">Add data</a></button></p>
+    {% endif %}
+{% endfor %}
+
+<br>
+<hr>
+<button type="button"><a href="/">Back</a></button>
+</body>
+</html>
